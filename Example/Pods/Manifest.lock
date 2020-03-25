@@ -1,0 +1,16 @@
+PODS:
+  - LNTools_fyh (0.1.0)
+
+DEPENDENCIES:
+  - LNTools_fyh (from `../`)
+
+EXTERNAL SOURCES:
+  LNTools_fyh:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LNTools_fyh: dde383fa75d0a24f71da83f2f8bdddcf8a3dbd88
+
+PODFILE CHECKSUM: 770882ce0d8a06169dc90cfc8bf0effd06e1c6d5
+
+COCOAPODS: 1.8.4

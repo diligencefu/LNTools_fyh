@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LNTools_fyh_Example' do
+  pod 'LNTools_fyh', :path => '../'
+
+  target 'LNTools_fyh_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
