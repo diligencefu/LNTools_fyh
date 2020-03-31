@@ -85,7 +85,7 @@ public extension UIView {
         }
     }
 
-    @objc func viewContainingController()->UIViewController? {
+    @objc func ln_viewContainingController()->UIViewController? {
         
         var nextResponder: UIResponder? = self
         
@@ -180,5 +180,36 @@ public extension UIColor {
         //根据颜色值创建UIColor
         self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
     }
+    
+    var rgba:LNRGBA? {
+        get {
+            if let components = self.cgColor.components {
+                let rgba = LNRGBA.init()
+                rgba.red = components[0]
+                rgba.green = components[components.count == 2 ? 0:1]
+                rgba.blue = components[components.count == 2 ? 0:2]
+                rgba.alpha = components[components.count == 2 ? 1:3]
+                        
+                return rgba
+            }else{
+                return nil
+            }
+        }
+    }
+        
+    class LNRGBA: NSObject {
+        var red:CGFloat = 0
+        var green:CGFloat = 0
+        var blue:CGFloat = 0
+        var alpha:CGFloat = 0
+        
+        public override var description: String {
+            get{
+                return "red:\(red),green:\(green),blue:\(blue),alpha:\(alpha)"
+            }
+        }
+    }
 
 }
+
+

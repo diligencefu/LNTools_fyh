@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LNTools_fyh'
-  s.version          = '0.1.2'
+  s.version          = '0.1.4'
   s.summary          = 'A short description of LNTools_fyh.'
 
 # This description is used to generate tags and improve search results.
@@ -44,6 +44,7 @@ TODO: Add long description of the pod here.
   # 图片浏览器
   s.subspec 'LNImageBrowser' do |browser|
       browser.source_files = 'LNTools_fyh/LNImageBrowser/Classes/**/*'
+      browser.dependency 'YYWebImage'
   end
   
   # 刷新

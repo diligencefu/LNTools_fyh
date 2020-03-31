@@ -450,6 +450,8 @@ static const NSTimeInterval kSpringAnimationDuration = 0.5;
 }
 
 - (void)configPageLabelWithPage:(NSUInteger)page {
+    
+    _pageLabel.hidden = _photoItems.count == 1;
     _pageLabel.text = [NSString stringWithFormat:@"%ld / %ld", page+1, _photoItems.count];
 }
 

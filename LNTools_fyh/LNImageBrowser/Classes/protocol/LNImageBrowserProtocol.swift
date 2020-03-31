@@ -10,11 +10,13 @@ import UIKit
 
 open class LNImageBrowser : NSObject {
     
+    public var subImageViews : [UIImageView] = [UIImageView]()
+    
     public func addImageBrowser<T:LNImageBrowserProtocol>(obj:T) {
         
-        obj.subImageViews.removeAll()
-        for index in 0..<obj.imageViews.subviews.count {
-            if let imageView = obj.imageViews.subviews[index] as? UIImageView {
+        self.subImageViews.removeAll()
+        for index in 0..<obj.ln_imageViews.subviews.count {
+            if let imageView = obj.ln_imageViews.subviews[index] as? UIImageView {
                 
                 imageView.isUserInteractionEnabled = true
                 let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(viewTheBigImage(ges:)))
@@ -22,7 +24,7 @@ open class LNImageBrowser : NSObject {
                 singleTap.numberOfTouchesRequired = 1
                 imageView.addGestureRecognizer(singleTap)
                 imageView.currentTag = 100+index
-                obj.subImageViews.append(imageView)
+                self.subImageViews.append(imageView)
             }
         }
     }
@@ -35,14 +37,14 @@ open class LNImageBrowser : NSObject {
         }
         
         var images = [KSPhotoItem]()
-        for index in 0 ..< superView.subImageViews.count {
-            let imageView = superView.subImageViews[index]
+        for index in 0 ..< self.subImageViews.count {
+            let imageView = self.subImageViews[index]
             let watchIMGItem = KSPhotoItem.init(sourceView: imageView, image: imageView.image)
             images.append(watchIMGItem!)
         }
         
         var selectIndex = 0
-        for imageView in superView.subImageViews {
+        for imageView in self.subImageViews {
             if imageView == ges.view {
                 selectIndex = (imageView.currentTag ?? 100) - 100
                 break
@@ -76,8 +78,7 @@ open class LNImageBrowser : NSObject {
 
 public protocol LNImageBrowserProtocol : NSObject {
     
-    var imageViews : UIView {get set}
-    var subImageViews : [UIImageView] {get set}
+    var ln_imageViews : UIView {get set}
     
     func ln_browserLongpressStyle() -> LNLongpressMode
     
