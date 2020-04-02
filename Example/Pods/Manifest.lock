@@ -1,18 +1,24 @@
 PODS:
-  - Kingfisher (5.13.2):
-    - Kingfisher/Core (= 5.13.2)
-  - Kingfisher/Core (5.13.2)
-  - LNTools_fyh (0.1.4):
-    - LNTools_fyh/LNImageBrowser (= 0.1.4)
-    - LNTools_fyh/LNRefresh (= 0.1.4)
-    - LNTools_fyh/LNViewExtension (= 0.1.4)
-  - LNTools_fyh/LNImageBrowser (0.1.4):
+  - Kingfisher (5.13.3):
+    - Kingfisher/Core (= 5.13.3)
+  - Kingfisher/Core (5.13.3)
+  - LNTools_fyh (1.0.0):
+    - LNTools_fyh/LNImageBrowser (= 1.0.0)
+    - LNTools_fyh/LNProgressHUD (= 1.0.0)
+    - LNTools_fyh/LNRefresh (= 1.0.0)
+    - LNTools_fyh/LNViewExtension (= 1.0.0)
+  - LNTools_fyh/LNImageBrowser (1.0.0):
     - YYWebImage
-  - LNTools_fyh/LNRefresh (0.1.4):
+  - LNTools_fyh/LNProgressHUD (1.0.0):
+    - MBProgressHUD
+  - LNTools_fyh/LNRefresh (1.0.0):
     - MJRefresh
-  - LNTools_fyh/LNViewExtension (0.1.4)
+  - LNTools_fyh/LNViewExtension (1.0.0):
+    - Toast
+  - MBProgressHUD (1.2.0)
   - MJRefresh (3.3.1)
   - SnapKit (5.0.1)
+  - Toast (4.0.0)
   - YYCache (1.0.4)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
@@ -27,10 +33,12 @@ DEPENDENCIES:
   - SnapKit
 
 SPEC REPOS:
-  trunk:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - Kingfisher
+    - MBProgressHUD
     - MJRefresh
     - SnapKit
+    - Toast
     - YYCache
     - YYImage
     - YYWebImage
@@ -40,14 +48,16 @@ EXTERNAL SOURCES:
     :path: "../LNTools_fyh.podspec"
 
 SPEC CHECKSUMS:
-  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
-  LNTools_fyh: 5fa57cf5b4c5a1f3740e5ea4c1c3b9562c8836d7
+  Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
+  LNTools_fyh: ba6bc2b1071a43eafecc069858adf0dcf8f1c060
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: f72b250498065ceae37ffd0c1db43d32ba399cf7
+PODFILE CHECKSUM: 2c2171bc74e727a5a17d4d6d01222ff81c742688
 
 COCOAPODS: 1.8.4

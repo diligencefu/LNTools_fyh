@@ -1,6 +1,6 @@
 {
   "name": "LNTools_fyh",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "summary": "A short description of LNTools_fyh.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/diligencefu/LNTools_fyh",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/diligencefu/LNTools_fyh.git",
-    "tag": "0.1.4"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "10.0"
@@ -40,7 +40,26 @@
     },
     {
       "name": "LNViewExtension",
-      "source_files": "LNTools_fyh/LNViewExtension/Classes/**/*"
+      "source_files": "LNTools_fyh/LNViewExtension/Classes/**/*",
+      "dependencies": {
+        "Toast": [
+
+        ]
+      }
+    },
+    {
+      "name": "LNProgressHUD",
+      "source_files": "LNTools_fyh/LNProgressHUD/Classes/**/*",
+      "dependencies": {
+        "MBProgressHUD": [
+
+        ]
+      },
+      "resource_bundles": {
+        "LNTools_fyh": [
+          "LNTools_fyh/LNProgressHUD/Assets/Images.xcassets"
+        ]
+      }
     }
   ]
 }

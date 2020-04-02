@@ -1,3 +1,7 @@
+
+# 使用清华大学的源进行cocoapods
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+
 use_frameworks!
 
 target 'LNTools_fyh_Example' do

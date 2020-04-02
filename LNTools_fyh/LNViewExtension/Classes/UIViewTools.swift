@@ -209,7 +209,40 @@ public extension UIColor {
             }
         }
     }
-
 }
 
+import Toast
+//MARK: 设置一个提醒
+public enum WWZLToastPosition {
+    case top
+    case center
+    case bottom
+}
+public func kSetToast(str:String,position:WWZLToastPosition = WWZLToastPosition.center,isUserEnableWhenShow:Bool = true) {
+    
+    var tPsition = String()
+    switch position {
+    case .top:
+        tPsition = CSToastPositionTop
+    case .top:
+        tPsition = CSToastPositionCenter
+    default:
+        tPsition = CSToastPositionBottom
+    }
+    DispatchQueue.main.async {
+        let kWindow = UIApplication.shared.keyWindow
+        if !isUserEnableWhenShow {
+            kWindow?.isUserInteractionEnabled = false
+        }
+        let style = CSToastStyle.init(defaultStyle: ())
+        kWindow?.makeToast(str, duration: 2.0, position: tPsition, style: style)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.5, execute: {
+            kWindow?.isUserInteractionEnabled = true
+        })
+    }
+}
+
+ extension UIViewController {
+
+}
 
