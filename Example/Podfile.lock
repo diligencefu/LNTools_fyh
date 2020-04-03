@@ -2,18 +2,18 @@ PODS:
   - Kingfisher (5.13.3):
     - Kingfisher/Core (= 5.13.3)
   - Kingfisher/Core (5.13.3)
-  - LNTools_fyh (1.0.1):
-    - LNTools_fyh/LNImageBrowser (= 1.0.1)
-    - LNTools_fyh/LNProgressHUD (= 1.0.1)
-    - LNTools_fyh/LNRefresh (= 1.0.1)
-    - LNTools_fyh/LNViewExtension (= 1.0.1)
-  - LNTools_fyh/LNImageBrowser (1.0.1):
+  - LNTools_fyh (0.1.5):
+    - LNTools_fyh/LNImageBrowser (= 0.1.5)
+    - LNTools_fyh/LNProgressHUD (= 0.1.5)
+    - LNTools_fyh/LNRefresh (= 0.1.5)
+    - LNTools_fyh/LNViewExtension (= 0.1.5)
+  - LNTools_fyh/LNImageBrowser (0.1.5):
     - YYWebImage
-  - LNTools_fyh/LNProgressHUD (1.0.1):
+  - LNTools_fyh/LNProgressHUD (0.1.5):
     - MBProgressHUD
-  - LNTools_fyh/LNRefresh (1.0.1):
+  - LNTools_fyh/LNRefresh (0.1.5):
     - MJRefresh
-  - LNTools_fyh/LNViewExtension (1.0.1):
+  - LNTools_fyh/LNViewExtension (0.1.5):
     - Toast
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.3.1)
@@ -49,7 +49,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
-  LNTools_fyh: 0d9cc81c50886a65b6a15ecadffea153bbd6014d
+  LNTools_fyh: 2da7c5b9745c911a1ab3df6f24b17d8027556773
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
