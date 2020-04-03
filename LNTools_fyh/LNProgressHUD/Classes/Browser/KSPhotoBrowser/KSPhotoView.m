@@ -8,8 +8,7 @@
 
 #import "KSPhotoView.h"
 #import "KSPhotoItem.h"
-#import "YYWebImage.h"
-//#import <YYWebImage/YYWebImage.h>
+#import <YYWebImage/YYWebImage.h>
 #import "KSProgressLayer.h"
 
 const CGFloat kKSPhotoViewPadding = 10;

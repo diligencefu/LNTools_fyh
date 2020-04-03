@@ -224,7 +224,7 @@ public func kSetToast(str:String,position:WWZLToastPosition = WWZLToastPosition.
     switch position {
     case .top:
         tPsition = CSToastPositionTop
-    case .top:
+    case .center:
         tPsition = CSToastPositionCenter
     default:
         tPsition = CSToastPositionBottom
