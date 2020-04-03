@@ -15,8 +15,8 @@ open class LNImageBrowser : NSObject {
     public func addImageBrowser<T:LNImageBrowserProtocol>(obj:T) {
         
         self.subImageViews.removeAll()
-        for index in 0..<obj.ln_imageViews.subviews.count {
-            if let imageView = obj.ln_imageViews.subviews[index] as? UIImageView {
+        for index in 0..<obj.ln_imageViewsContainer.subviews.count {
+            if let imageView = obj.ln_imageViewsContainer.subviews[index] as? UIImageView {
                 
                 imageView.isUserInteractionEnabled = true
                 let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(viewTheBigImage(ges:)))
@@ -78,7 +78,8 @@ open class LNImageBrowser : NSObject {
 
 public protocol LNImageBrowserProtocol : NSObject {
     
-    var ln_imageViews : UIView {get set}
+    ///承载需要显示的imageView的视图，也就是imageView的父视图，最好单独创建一个专门承载的view
+    var ln_imageViewsContainer : UIView {get}
     
     func ln_browserLongpressStyle() -> LNLongpressMode
     

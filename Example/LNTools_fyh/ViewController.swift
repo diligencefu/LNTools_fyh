@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         mainTableView.backgroundColor = UIColor.init(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.addSubview(mainTableView)
-        navigationItem.title = "图片浏览示例"        
+        navigationItem.title = "图片浏览示例"
     }
 }
 
@@ -55,6 +55,11 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource {
 }
 
 class ImageViewerCell: UITableViewCell, LNImageBrowserProtocol {
+    
+    var ln_imageViewsContainer: UIView {
+        ln_imageViews
+    }
+    
     var ln_imageViews: UIView = UIView.init()
     let browser = LNImageBrowser()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -110,9 +115,8 @@ class ImageViewerCell: UITableViewCell, LNImageBrowserProtocol {
             imageV.layer.cornerRadius = 2
             imageV.tag = 170 + index
             ln_imageViews.addSubview(imageV)
-            
-            browser.addImageBrowser(obj: self)
         }
+        browser.addImageBrowser(obj: self)
     }
 }
 
