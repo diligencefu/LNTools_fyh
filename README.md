@@ -15,11 +15,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## 安装
 
-如果只需要用到其中一个，比如
-只用到了其中的图片浏览器：
-
+如果只需要用到其中一个:
 ```
 pod 'LNTools_fyh/LNImageBrowser'
+pod 'LNTools_fyh/LNProgressHUD'
+pod 'LNTools_fyh/LNRefresh'
+pod 'LNTools_fyh/LNViewExtension'
 ```
 
 如果用到了所有功能，就直接：
@@ -30,7 +31,7 @@ pod 'LNTools_fyh'
 
 ## 调用
 
-LNImageBrowser：
+### 1.LNImageBrowser：
 调用图片浏览器时，首先需要遵守一个协议：LNImageBrowserProtocol，遵守协议后还需要实现一个变量ln_imageViewsContainer，在他的get方法里面返回你想要展示的图片的imageview的父视图，记住，一定要是imageView的父视图。比如，你在一个变量名为showView的view上添加了五个imageView，这个时候你想点击其中一个图片进行浏览所有图片。可以这样做
 
 ```
@@ -43,6 +44,35 @@ class TestVc: UIViewController, LNImageBrowserProtocol {
 ```
 
 完成之后，只要你点击其中一个图片，就会进入浏览模式
+
+还有两个可选方法，用于长按图片之后的可选操作。
+
+1. 这个方法返回值两个, defult就是默认模式，只有一个保存图片，coustom就是自定义了
+
+```
+ @objc public enum LNLongpressMode : Int {
+    case defult = 0
+    case coustom
+}
+func ln_browserLongpressStyle() -> LNLongpressMode
+```
+
+2.基于第一个方法选择coustom，可在第二个方法里面做操作
+
+```
+    func ln_browser(browser:UIViewController, didLongpressedAt index:NSInteger, with image:UIImage)
+
+```
+
+
+### 2.LNProgressHUD
+这是一个对UIViewcontroller的扩展， 引入之后在控制器直接使用：
+
+
+### 3.LNViewExtension
+一些常用的UI类的扩展
+
+
 
 ## Author
 

@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.addSubview(mainTableView)
         navigationItem.title = "图片浏览示例"
+        
+        self.ly
     }
 }
 
