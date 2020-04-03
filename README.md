@@ -68,6 +68,52 @@ func ln_browserLongpressStyle() -> LNLongpressMode
 ### 2.LNProgressHUD
 这是一个对UIViewcontroller的扩展， 引入之后在控制器直接使用：
 
+        self.ly_showTextHub(text: "ok")
+
+
+```
+func ly_showTextHub(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
+        DispatchQueue.ly_mbph_runInMain {
+            self.lyHud.textHud(text: text)
+            self.view.addSubview(self.lyHud)
+            self.lyHud.progress = 0.5
+            self.lyHud.show(animated: true, autoHideDelay: autoHideDelay)
+        }
+    }
+    
+    func ly_showSuccessHud(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
+        DispatchQueue.ly_mbph_runInMain {
+            
+            self.lyHud.successHud(text: text)
+            self.view.addSubview(self.lyHud)
+            self.lyHud.isUserInteractionEnabled = false
+            self.lyHud.show(animated: true, autoHideDelay: autoHideDelay)
+        }
+    }
+    
+    func ly_showFailureHud(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
+        DispatchQueue.ly_mbph_runInMain {
+            self.lyHud.failureHud(text: text)
+            self.view.addSubview(self.lyHud)
+            self.lyHud.show(animated: true, autoHideDelay: autoHideDelay)
+        }
+    }
+    
+    func ly_hideHud(afterDelay delay: TimeInterval = 0) -> Void {
+        DispatchQueue.ly_mbph_runInMain {
+            self.lyHud.hide(animated: true, afterDelay: delay)
+        }
+    }
+    
+    func ly_showProgressHud(progress:CGFloat, text:String?, style:Int = 1, autoHideDelay: TimeInterval = 0)  {
+        
+        DispatchQueue.ly_mbph_runInMain {
+            self.lyHud.progressHud(proress: progress, text: text, style: style)
+            self.view.addSubview(self.lyHud)
+            self.lyHud.show(animated: true, autoHideDelay: autoHideDelay)
+        }
+    }
+    ```
 
 ### 3.LNViewExtension
 一些常用的UI类的扩展

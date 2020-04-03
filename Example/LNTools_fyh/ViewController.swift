@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         self.view.addSubview(mainTableView)
         navigationItem.title = "图片浏览示例"
         
-        self.ly
+        self.ly_showTextHub(text: "ok")
     }
 }
 
