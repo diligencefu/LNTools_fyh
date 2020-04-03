@@ -30,9 +30,7 @@ class ViewController: UIViewController {
         mainTableView.backgroundColor = UIColor.init(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.addSubview(mainTableView)
-        navigationItem.title = "图片浏览示例"
-        
-        self.ly_showSuccessHud(text: "ok")
+        navigationItem.title = "图片浏览示例"        
     }
 }
 
