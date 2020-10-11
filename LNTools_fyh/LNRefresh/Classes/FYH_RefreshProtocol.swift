@@ -11,12 +11,12 @@ import MJRefresh
 
 public enum FYHRefresh {
     
-    static func addRefreshHeader<T:FYH_RefreshProtocol>(obj:T) {
+    public static func addRefreshHeader<T:FYH_RefreshProtocol>(obj:T) {
         
         obj.mainTableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             
-            obj.pageIndex = 1
             obj.YHRequestData(with: obj.pageIndex) { (datas, allPage) in
+                obj.pageIndex = 1
                 
                 obj.datas = datas
                 obj.mainTableView.mj_footer?.endRefreshing()
@@ -34,11 +34,11 @@ public enum FYHRefresh {
     }
     
     
-    static func addRefreshFooter<T:FYH_RefreshProtocol>(obj:T) {
+    public static func addRefreshFooter<T:FYH_RefreshProtocol>(obj:T) {
         
         obj.mainTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
-            obj.pageIndex += 1
             obj.YHRequestData(with: obj.pageIndex) { (datas, allPage) in
+                obj.pageIndex += 1
                 
                 for data in datas {
                     obj.datas.append(data)

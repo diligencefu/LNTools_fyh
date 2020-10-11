@@ -21,17 +21,30 @@ extension UIImage {
         }
     }
     
+    func imageWithTintColor(tintColor:UIColor) -> UIImage? {
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
+        tintColor.setFill()
+        
+        let bounds = CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        UIRectFill(bounds)
+        
+        self.draw(in: bounds, blendMode: .destinationIn, alpha: 1.0)
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage
+    }
 }
 
 
 open class LYProgressHUD: MBProgressHUD {
     
     //HUD的背景颜色
-    static var backgroudColor:UIColor = .darkText
+    public static var backgroudColor:UIColor = .darkText
     //HUD的内容颜色
-    static var textColor:UIColor = .white
+    public static var textColor:UIColor = .white
     ///当HUD出现时，当前控制器是否停止继续响应
-    static var isStopUserInteractionEnabledWhenAppear:Bool = true
+    public static var isStopUserInteractionEnabledWhenAppear:Bool = true
     
     open func show(animated: Bool, autoHideDelay: TimeInterval) {
         show(animated: animated)
@@ -67,10 +80,10 @@ open class LYProgressHUD: MBProgressHUD {
         mode = .customView
         customView = nil
         let iv = UIImageView(frame: CGRect(x: 0, y: 0, width: 37, height: 37))
-        iv.image = UIImage.ly_inSelfBundleNamed("hud_success_bgi")
+        let image = UIImage.ly_inSelfBundleNamed("hud_success_bgi")?.imageWithTintColor(tintColor: LYProgressHUD.textColor)
+        iv.image = image
         customView = iv
         label.text = text
-        
     }
     
     open func failureHud(text: String?) -> Void {
@@ -78,9 +91,9 @@ open class LYProgressHUD: MBProgressHUD {
         mode = .customView
         customView = nil
         let iv = UIImageView(frame: CGRect(x: 0, y: 0, width: 37, height: 37))
-        iv.image = UIImage.ly_inSelfBundleNamed("hud_failure_bgi")
+        let image = UIImage.ly_inSelfBundleNamed("hud_failure_bgi")?.imageWithTintColor(tintColor: LYProgressHUD.textColor)
+        iv.image = image
         customView = iv
-        
     }
     
     ///style:   1-横着的条形进度条。2-圆环形进度圈，进度在里圈。3-菊花转。其他：圆形进度条，已进行的部分是实体色，未进行的事浅色
@@ -137,7 +150,7 @@ public extension UIViewController {
         }
     }
     
-    func ly_showLoadingHUD(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
+    func ly_showLoadingHUD(text: String?, autoHideDelay: TimeInterval = 1.5) -> Void {
         DispatchQueue.ly_mbph_runInMain {
             self.lyHud.loadingHud(text: text)
             self.view.addSubview(self.lyHud)
@@ -145,7 +158,7 @@ public extension UIViewController {
         }
     }
     
-    func ly_showTextHub(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
+    func ly_showTextHub(text: String?, autoHideDelay: TimeInterval = 1.5) -> Void {
         DispatchQueue.ly_mbph_runInMain {
             self.lyHud.textHud(text: text)
             self.view.addSubview(self.lyHud)
@@ -154,7 +167,7 @@ public extension UIViewController {
         }
     }
     
-    func ly_showSuccessHud(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
+    func ly_showSuccessHud(text: String?, autoHideDelay: TimeInterval = 1.5) -> Void {
         DispatchQueue.ly_mbph_runInMain {
             
             self.lyHud.successHud(text: text)
@@ -164,7 +177,7 @@ public extension UIViewController {
         }
     }
     
-    func ly_showFailureHud(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
+    func ly_showFailureHud(text: String?, autoHideDelay: TimeInterval = 1.5) -> Void {
         DispatchQueue.ly_mbph_runInMain {
             self.lyHud.failureHud(text: text)
             self.view.addSubview(self.lyHud)
@@ -172,13 +185,13 @@ public extension UIViewController {
         }
     }
     
-    func ly_hideHud(afterDelay delay: TimeInterval = 0) -> Void {
+    func ly_hideHud(afterDelay delay: TimeInterval = 1.5) -> Void {
         DispatchQueue.ly_mbph_runInMain {
             self.lyHud.hide(animated: true, afterDelay: delay)
         }
     }
     
-    func ly_showProgressHud(progress:CGFloat, text:String?, style:Int = 1, autoHideDelay: TimeInterval = 0)  {
+    func ly_showProgressHud(progress:CGFloat, text:String?, style:Int = 1, autoHideDelay: TimeInterval = 1.5)  {
         
         DispatchQueue.ly_mbph_runInMain {
             self.lyHud.progressHud(proress: progress, text: text, style: style)
