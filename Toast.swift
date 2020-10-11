@@ -35,3 +35,15 @@ public func kSetToast(str:String,position:WWZLToastPosition = WWZLToastPosition.
         })
     }
 }
+
+public extension DispatchQueue {
+    static func ln_runInMain(_ block: @escaping () -> Void) -> Void {
+        if Thread.current == Thread.main {
+            block()
+        } else {
+            DispatchQueue.main.async {
+                block()
+            }
+        }
+    }
+}

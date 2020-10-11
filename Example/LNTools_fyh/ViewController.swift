@@ -45,7 +45,10 @@ class ViewController: UIViewController,FYH_RefreshProtocol {
         
         FYHRefresh.addRefreshHeader(obj: self)
         FYHRefresh.addRefreshFooter(obj: self)
-        mainTableView.mj_header?.beginRefreshing()
+        
+        DispatchQueue.ln_runInMain {
+            self.mainTableView.mj_header?.beginRefreshing()
+        }
     }
 }
 
@@ -63,7 +66,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let kWidth = (kScreenW-7*2-16*2)/3
+        let kWidth = (UIScreen.width-7*2-16*2)/3
         return 8*2+kWidth
     }
     
@@ -125,7 +128,7 @@ class ImageViewerCell: UITableViewCell, LNImageBrowserProtocol {
         let kSpace = CGFloat(7)
         var kWidth = CGFloat()
         
-        kWidth = (kScreenW-kSpace*2-16*2)/3
+        kWidth = (UIScreen.width-kSpace*2-16*2)/3
         
         let kHeight = kWidth
         let lines = 3
@@ -147,6 +150,3 @@ class ImageViewerCell: UITableViewCell, LNImageBrowserProtocol {
         browser.addImageBrowser(obj: self)
     }
 }
-
-let kScreenBounds = UIScreen.main.bounds
-let kScreenW = kScreenBounds.width
