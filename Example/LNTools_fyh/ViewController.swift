@@ -25,6 +25,7 @@ class ViewController: UIViewController,FYH_RefreshProtocol {
         }
     }
     
+    
     fileprivate let identifier_cell = "identifier_cell"
     
     override func viewDidLoad() {
