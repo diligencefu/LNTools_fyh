@@ -1,22 +1,22 @@
 PODS:
-  - Kingfisher (5.13.3):
-    - Kingfisher/Core (= 5.13.3)
-  - Kingfisher/Core (5.13.3)
-  - LNTools_fyh (0.1.5):
-    - LNTools_fyh/LNImageBrowser (= 0.1.5)
-    - LNTools_fyh/LNProgressHUD (= 0.1.5)
-    - LNTools_fyh/LNRefresh (= 0.1.5)
-    - LNTools_fyh/LNViewExtension (= 0.1.5)
-  - LNTools_fyh/LNImageBrowser (0.1.5):
+  - Kingfisher (5.15.6):
+    - Kingfisher/Core (= 5.15.6)
+  - Kingfisher/Core (5.15.6)
+  - LNTools_fyh (1.0.1):
+    - LNTools_fyh/LNImageBrowser (= 1.0.1)
+    - LNTools_fyh/LNProgressHUD (= 1.0.1)
+    - LNTools_fyh/LNRefresh (= 1.0.1)
+    - LNTools_fyh/LNViewExtension (= 1.0.1)
+  - LNTools_fyh/LNImageBrowser (1.0.1):
     - YYWebImage
-  - LNTools_fyh/LNProgressHUD (0.1.5):
+  - LNTools_fyh/LNProgressHUD (1.0.1):
     - MBProgressHUD
-  - LNTools_fyh/LNRefresh (0.1.5):
+  - LNTools_fyh/LNRefresh (1.0.1):
     - MJRefresh
-  - LNTools_fyh/LNViewExtension (0.1.5):
+  - LNTools_fyh/LNViewExtension (1.0.1):
     - Toast
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.3.1)
+  - MJRefresh (3.5.0)
   - SnapKit (5.0.1)
   - Toast (4.0.0)
   - YYCache (1.0.4)
@@ -48,10 +48,10 @@ EXTERNAL SOURCES:
     :path: "../LNTools_fyh.podspec"
 
 SPEC CHECKSUMS:
-  Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
-  LNTools_fyh: 2da7c5b9745c911a1ab3df6f24b17d8027556773
+  Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  LNTools_fyh: 8249b548168f06cae665f1a1e500ba9957315a23
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -60,4 +60,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2c2171bc74e727a5a17d4d6d01222ff81c742688
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
