@@ -4,12 +4,10 @@
 //
 //  Created by 付耀辉 on 2020/3/19.
 //
-
 import UIKit
-
-public extension UIView {
+@objc public extension UIView {
     
-    var x : CGFloat {
+    var ln_x : CGFloat {
         get {
             frame.origin.x
         }
@@ -18,7 +16,7 @@ public extension UIView {
         }
     }
     
-    var y : CGFloat {
+    var ln_y : CGFloat {
         get {
             frame.origin.y
         }
@@ -27,7 +25,7 @@ public extension UIView {
         }
     }
     
-    var width:CGFloat{
+    var ln_width:CGFloat{
         get {
             bounds.width
         }
@@ -37,7 +35,7 @@ public extension UIView {
 
     }
     
-    var height:CGFloat{
+    var ln_height:CGFloat{
 
         get {
             bounds.height
@@ -49,7 +47,7 @@ public extension UIView {
 
     }
     
-    var centerY:CGFloat {
+    var ln_centerY:CGFloat {
         get {
             center.y
         }
@@ -58,7 +56,7 @@ public extension UIView {
         }
     }
     
-    var centerX:CGFloat {
+    var ln_centerX:CGFloat {
         get {
             center.x
         }
@@ -67,21 +65,39 @@ public extension UIView {
         }
     }
     
-    var right:CGFloat {
+    var ln_right:CGFloat {
         get {
-            x+width
+            ln_x+ln_width
         }
         set {
-            x = newValue - width
+            ln_x = newValue - ln_width
         }
     }
     
-    var bottom:CGFloat {
+    var ln_bottom:CGFloat {
         get {
-            y+height
+            ln_y+ln_height
         }
         set {
-            y = newValue - height
+            ln_y = newValue - ln_height
+        }
+    }
+    
+    var ln_origin : CGPoint {
+        get {
+            self.frame.origin
+        }
+        set {
+            self.frame.origin = newValue
+        }
+    }
+    
+    var ln_size : CGSize {
+        get {
+            self.frame.size
+        }
+        set {
+            self.frame.size = newValue
         }
     }
 
@@ -101,7 +117,7 @@ public extension UIView {
         return nil
     }
     
-    @IBInspectable var cornerRadius: CGFloat {
+    @IBInspectable var ln_cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -111,7 +127,7 @@ public extension UIView {
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable var ln_borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -120,15 +136,25 @@ public extension UIView {
         }
     }
     
-    @IBInspectable var borderColor: UIColor {
+    @IBInspectable var ln_borderColor: UIColor {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
         set {
             layer.borderColor = newValue.cgColor
         }
-        
     }
+}
+
+//调试模式输出
+public func WWZLDebugPrint<T>(item message:T, file:String = #file, function:String = #function,line:Int = #line) {
+    
+    #if DEBUG
+    //获取文件名
+    let fileName = (file as NSString).lastPathComponent
+    //打印日志内容
+    print("\(fileName):\(line) | \(message)")
+    #endif
 }
 
 public extension UIScreen {
