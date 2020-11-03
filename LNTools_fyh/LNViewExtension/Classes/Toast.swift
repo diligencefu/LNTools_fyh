@@ -8,16 +8,16 @@
 import Toast
 import UIKit
 
-public extension UIView {
+@objc public extension UIView {
 
     //MARK: 设置一个提醒
-    public enum WWZLToastPosition {
+    @objc enum WWZLToastPosition:Int{
         case top
         case center
         case bottom
     }
     
-    public func ln_showToast(str:String,position:WWZLToastPosition = WWZLToastPosition.center,isUserInterfaceEnableWhenShow:Bool = true) {
+    func ln_showToast(str:String,position:WWZLToastPosition = WWZLToastPosition.center,isUserInterfaceEnableWhenShow:Bool = true) {
         
         var tPsition = String()
         switch position {

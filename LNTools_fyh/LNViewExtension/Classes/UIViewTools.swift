@@ -157,7 +157,7 @@ public func WWZLDebugPrint<T>(item message:T, file:String = #file, function:Stri
     #endif
 }
 
-public extension UIScreen {
+@objc public extension UIScreen {
     
     static var width:CGFloat {
         UIScreen.main.bounds.width

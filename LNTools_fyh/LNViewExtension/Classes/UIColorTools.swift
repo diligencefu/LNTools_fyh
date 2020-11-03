@@ -5,7 +5,7 @@
 //  Created by MAC on 2020/10/11.
 //
 
-public extension UIColor {
+@objc public extension UIColor {
     
     convenience init(red: CGFloat, green: CGFloat, blue: CGFloat, alph:CGFloat = 1) {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alph)
@@ -54,7 +54,7 @@ public extension UIColor {
         self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
     }
     
-    @objc public var rgba:LNRGBA? {
+    @objc var rgba:LNRGBA? {
         get {
             if let components = self.cgColor.components {
                 let rgba = LNRGBA.init()
@@ -70,7 +70,7 @@ public extension UIColor {
         }
     }
         
-    class LNRGBA: NSObject {
+    @objc class LNRGBA: NSObject {
         var red:CGFloat = 0
         var green:CGFloat = 0
         var blue:CGFloat = 0
@@ -78,8 +78,21 @@ public extension UIColor {
         
         public override var description: String {
             get{
-                return "red:\(red),green:\(green),blue:\(blue),alpha:\(alpha)"
+                return "\n red:\(CGFloat(red*255)),\n green:\(Int(green*255)),\n blue:\(Int(blue*255)),\n alpha:\(alpha)"
+//                return "\n red:\(red),\n green:\(green),\n blue:\(blue),\n alpha:\(alpha)"
             }
         }
+    }
+    
+    static func ln_colorWithGray(_ gary: CGFloat) -> UIColor {
+        return ln_color(red: gary, green: gary, blue: gary)
+    }
+    
+    static func ln_color(red:CGFloat, green:CGFloat, blue:CGFloat) -> UIColor {
+        return ln_colorAlpha(red: red, green: green, blue: blue, alpha: 1.0)
+    }
+    
+    static func ln_colorAlpha(red:CGFloat, green:CGFloat, blue:CGFloat, alpha:CGFloat) -> UIColor {
+        return UIColor(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: alpha)
     }
 }
