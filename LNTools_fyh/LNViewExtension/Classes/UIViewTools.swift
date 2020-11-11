@@ -30,7 +30,7 @@ import UIKit
             bounds.width
         }
         set {
-            self.bounds = CGRect.init(x: 0, y: 0, width: newValue, height: self.bounds.height)
+            self.bounds.size.width = newValue
         }
 
     }
@@ -42,7 +42,7 @@ import UIKit
         }
         
         set {
-            self.bounds = CGRect.init(x: 0, y: 0, width: self.bounds.width, height: newValue)
+            self.bounds.size.height = newValue
         }
 
     }
