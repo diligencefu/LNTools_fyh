@@ -36,7 +36,7 @@ public enum FYHRefresh {
     
     public static func addRefreshFooter<T:FYH_RefreshProtocol>(obj:T) {
         
-        obj.mainTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+        obj.mainTableView.mj_footer = MJRefreshBackNormalFooter.init(refreshingBlock: {
             obj.YHRequestData(with: obj.pageIndex) { (datas, allPage) in
                 obj.pageIndex += 1
                 
