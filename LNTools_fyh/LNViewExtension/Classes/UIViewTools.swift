@@ -27,10 +27,10 @@ import UIKit
     
     var ln_width:CGFloat{
         get {
-            bounds.width
+            frame.width
         }
         set {
-            self.bounds.size.width = newValue
+            self.frame.size.width = newValue
         }
 
     }
@@ -38,11 +38,11 @@ import UIKit
     var ln_height:CGFloat{
 
         get {
-            bounds.height
+            frame.height
         }
         
         set {
-            self.bounds.size.height = newValue
+            self.frame.size.height = newValue
         }
 
     }
