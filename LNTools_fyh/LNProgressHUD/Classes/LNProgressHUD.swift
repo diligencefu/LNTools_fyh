@@ -8,7 +8,7 @@
 import UIKit
 import MBProgressHUD
 
-extension UIImage {
+@objc public extension UIImage {
     
     fileprivate class func ly_inSelfBundleNamed(_ name: String) -> UIImage? {
 
@@ -37,7 +37,7 @@ extension UIImage {
 }
 
 
-open class LYProgressHUD: MBProgressHUD {
+@objc public class LYProgressHUD: MBProgressHUD {
     
     //HUD的背景颜色
     public static var backgroudColor:UIColor = .darkText
@@ -133,7 +133,7 @@ extension DispatchQueue {
 }
 
 
-public extension UIViewController {
+@objc public extension UIViewController {
     
     var lyHud: LYProgressHUD {
         get {
@@ -150,7 +150,7 @@ public extension UIViewController {
         }
     }
     
-    func ly_showLoadingHUD(text: String?, autoHideDelay: TimeInterval = 1.5) -> Void {
+    func ly_showLoadingHUD(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
         DispatchQueue.ly_mbph_runInMain {
             self.lyHud.loadingHud(text: text)
             self.view.addSubview(self.lyHud)
@@ -185,13 +185,13 @@ public extension UIViewController {
         }
     }
     
-    func ly_hideHud(afterDelay delay: TimeInterval = 1.5) -> Void {
+    func ly_hideHud(afterDelay delay: TimeInterval = 0) -> Void {
         DispatchQueue.ly_mbph_runInMain {
             self.lyHud.hide(animated: true, afterDelay: delay)
         }
     }
     
-    func ly_showProgressHud(progress:CGFloat, text:String?, style:Int = 1, autoHideDelay: TimeInterval = 1.5)  {
+    func ly_showProgressHud(progress:CGFloat, text:String?, style:Int = 1, autoHideDelay: TimeInterval = 0)  {
         
         DispatchQueue.ly_mbph_runInMain {
             self.lyHud.progressHud(proress: progress, text: text, style: style)
@@ -199,6 +199,40 @@ public extension UIViewController {
             self.lyHud.show(animated: true, autoHideDelay: autoHideDelay)
         }
     }
+}
+
+
+@objc public extension UIView {
+
+    var lyHud: LYProgressHUD {
+        get {
+            let pointer = UnsafeRawPointer(bitPattern: "_buttfly_MBProgressHUD_lyHud".hashValue)!
+            let hud = objc_getAssociatedObject(self, pointer) as? LYProgressHUD
+            if let hud = hud {
+                return hud
+            } else {
+                let hud = LYProgressHUD(view: self)
+                hud.bezelView.style = .solidColor
+                objc_setAssociatedObject(self, pointer, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                return hud
+            }
+        }
+    }
+
+    @objc func ly_showLoadingHUD(text: String?, autoHideDelay: TimeInterval = 0) -> Void {
+        DispatchQueue.ly_mbph_runInMain {
+            self.lyHud.loadingHud(text: text)
+            self.addSubview(self.lyHud)
+            self.lyHud.show(animated: true, autoHideDelay: autoHideDelay)
+        }
+    }
+
     
+    @objc func ly_hideHud(afterDelay delay: TimeInterval = 0) -> Void {
+        DispatchQueue.ly_mbph_runInMain {
+            self.lyHud.hide(animated: true, afterDelay: delay)
+        }
+    }
+
     
 }
