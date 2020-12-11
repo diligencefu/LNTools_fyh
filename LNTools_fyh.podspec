@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'LNTools_fyh'
-    s.version          = '1.1.4'
+    s.version          = '1.1.5'
     s.summary          = 'xxx'
 #    一些常用的view类扩展，封装MJRefresh，图片浏览器，HUD
     # This description is used to generate tags and improve search results.

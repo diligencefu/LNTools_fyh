@@ -12,46 +12,48 @@ import MJRefresh
 public enum FYHRefresh {
     
     public static func addRefreshHeader<T:FYH_RefreshProtocol>(obj:T) {
-        
-        obj.mainTableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
+        weak var obj = obj
+
+        obj?.mainTableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             
-            obj.pageIndex = 1
-            obj.YHRequestData(with: obj.pageIndex) { (datas, allPage) in
+            obj?.pageIndex = 1
+            obj?.YHRequestData(with:( obj?.pageIndex ?? 1)) {[weak obj] (datas, allPage) in
                 
-                obj.datas = datas
-                obj.mainTableView.mj_footer?.endRefreshing()
-                obj.mainTableView.mj_header?.endRefreshing()
-                if allPage <= obj.pageIndex {
-                    obj.mainTableView.mj_footer?.endRefreshingWithNoMoreData()
+                obj?.datas = datas
+                obj?.mainTableView.mj_footer?.endRefreshing()
+                obj?.mainTableView.mj_header?.endRefreshing()
+                if allPage <= (obj?.pageIndex ?? 1) {
+                    obj?.mainTableView.mj_footer?.endRefreshingWithNoMoreData()
                 }else{
-                    obj.mainTableView.mj_footer?.resetNoMoreData()
+                    obj?.mainTableView.mj_footer?.resetNoMoreData()
                 }
                 
-                obj.mainTableView.reloadData()
+                obj?.mainTableView.reloadData()
             }
         })
-        obj.mainTableView.mj_header?.beginRefreshing()
+        obj?.mainTableView.mj_header?.beginRefreshing()
     }
     
     
     public static func addRefreshFooter<T:FYH_RefreshProtocol>(obj:T) {
         
-        obj.mainTableView.mj_footer = MJRefreshBackNormalFooter.init(refreshingBlock: {
-            obj.pageIndex += 1
-            obj.YHRequestData(with: obj.pageIndex) { (datas, allPage) in
+        weak var obj = obj
+        obj?.mainTableView.mj_footer = MJRefreshBackNormalFooter.init(refreshingBlock: {
+            obj?.pageIndex += 1
+            obj?.YHRequestData(with: (obj?.pageIndex ?? 1)) {(datas, allPage) in
                 
                 for data in datas {
-                    obj.datas.append(data)
+                    obj?.datas.append(data)
                 }
                 
-                obj.mainTableView.mj_footer?.endRefreshing()
-                obj.mainTableView.mj_header?.endRefreshing()
-                if allPage <= obj.pageIndex {
-                    obj.mainTableView.mj_footer?.endRefreshingWithNoMoreData()
+                obj?.mainTableView.mj_footer?.endRefreshing()
+                obj?.mainTableView.mj_header?.endRefreshing()
+                if allPage <= (obj?.pageIndex ?? 1) {
+                    obj?.mainTableView.mj_footer?.endRefreshingWithNoMoreData()
                 }else{
-                    obj.mainTableView.mj_footer?.resetNoMoreData()
+                    obj?.mainTableView.mj_footer?.resetNoMoreData()
                 }
-                obj.mainTableView.reloadData()
+                obj?.mainTableView.reloadData()
             }
         })
     }
