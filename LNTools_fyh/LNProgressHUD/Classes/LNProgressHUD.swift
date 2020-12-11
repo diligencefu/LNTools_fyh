@@ -93,6 +93,7 @@ import MBProgressHUD
         let iv = UIImageView(frame: CGRect(x: 0, y: 0, width: 37, height: 37))
         let image = UIImage.ly_inSelfBundleNamed("hud_failure_bgi")?.imageWithTintColor(tintColor: LYProgressHUD.textColor)
         iv.image = image
+        label.text = text
         customView = iv
     }
     
