@@ -8,7 +8,7 @@
 
 import UIKit
 import LNTools_fyh
-import Kingfisher
+//import Kingfisher
 import SnapKit
 
 class ViewController: UIViewController,FYH_RefreshProtocol {
@@ -140,7 +140,7 @@ class ImageViewerCell: UITableViewCell, LNImageBrowserProtocol {
             
             let imageV = UIImageView.init(frame: CGRect(x:(kWidth + kSpace) * row, y:kSpace+(kSpace+kHeight)*CGFloat(index/lines), width: kWidth, height: kHeight))
             
-            imageV.kf.setImage(with: URL.init(string: imagesUrl[index]), placeholder: UIImage.init(named: "placeholder_1"))
+//            imageV.kf.setImage(with: URL.init(string: imagesUrl[index]), placeholder: UIImage.init(named: "placeholder_1"))
             imageV.contentMode = .scaleAspectFill
             imageV.clipsToBounds = true
             imageV.isUserInteractionEnabled = true
