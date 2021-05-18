@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'LNTools_fyh'
-    s.version          = '1.1.8'
+    s.version          = '1.1.9'
     s.summary          = 'xxx'
 #    一些常用的view类扩展，封装MJRefresh，图片浏览器，HUD
     # This description is used to generate tags and improve search results.
@@ -45,6 +45,7 @@ Pod::Spec.new do |s|
     # 图片浏览器
     s.subspec 'LNImageBrowser' do |browser|
         browser.source_files = 'LNTools_fyh/LNImageBrowser/Classes/**/*'
+        browser.deployment_target = '9.0'
         browser.dependency 'YYWebImage'
     end
     
