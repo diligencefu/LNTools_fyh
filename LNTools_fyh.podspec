@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'LNTools_fyh'
-    s.version          = '1.1.6'
+    s.version          = '1.1.7'
     s.summary          = 'xxx'
 #    一些常用的view类扩展，封装MJRefresh，图片浏览器，HUD
     # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/diligencefu/LNTools_fyh.git', :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
     
-    s.ios.deployment_target = '10.0'
+    s.ios.deployment_target = '9.0'
     
     s.source_files = 'LNTools_fyh/Classes/**/*'
     
