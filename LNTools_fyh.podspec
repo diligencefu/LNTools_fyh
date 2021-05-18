@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'LNTools_fyh'
-    s.version          = '1.2.1'
+    s.version          = '1.2.2'
     s.summary          = 'xxx'
 #    一些常用的view类扩展，封装MJRefresh，图片浏览器，HUD
     # This description is used to generate tags and improve search results.
@@ -45,18 +45,21 @@ Pod::Spec.new do |s|
     # 图片浏览器
     s.subspec 'LNImageBrowser' do |browser|
         browser.source_files = 'LNTools_fyh/LNImageBrowser/Classes/**/*'
+        browser.ios.deployment_target = '9.0'
         browser.dependency 'YYWebImage'
     end
     
     # 刷新
     s.subspec 'LNRefresh' do |refresh|
         refresh.source_files = 'LNTools_fyh/LNRefresh/Classes/**/*'
+        refresh.ios.deployment_target = '9.0'
         refresh.dependency 'MJRefresh'
     end
     
     # UIView扩展
     s.subspec 'LNViewExtension' do |tool|
         tool.source_files = 'LNTools_fyh/LNViewExtension/Classes/**/*'
+        tool.ios.deployment_target = '9.0'
         tool.dependency 'Toast'
     end
     
@@ -64,6 +67,7 @@ Pod::Spec.new do |s|
     s.subspec 'LNProgressHUD' do |hud|
         hud.source_files = 'LNTools_fyh/LNProgressHUD/Classes/**/*'
         hud.dependency 'MBProgressHUD'
+        hud.ios.deployment_target = '9.0'
         hud.resource_bundles = {
             'LNTools_fyh' => ['LNTools_fyh/LNProgressHUD/Assets/Images.xcassets']
         }
