@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/diligencefu/LNTools_fyh.git', :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
     
-    s.ios.deployment_target = '10.0'
+    s.ios.deployment_target = '9.0'
     
     s.source_files = 'LNTools_fyh/Classes/**/*'
     
@@ -45,24 +45,28 @@ Pod::Spec.new do |s|
     # 图片浏览器
     s.subspec 'LNImageBrowser' do |browser|
         browser.source_files = 'LNTools_fyh/LNImageBrowser/Classes/**/*'
+        browser.ios.deployment_target = '9.0'
         browser.dependency 'YYWebImage'
     end
     
     # 刷新
     s.subspec 'LNRefresh' do |refresh|
         refresh.source_files = 'LNTools_fyh/LNRefresh/Classes/**/*'
+        refresh.ios.deployment_target = '9.0'
         refresh.dependency 'MJRefresh'
     end
     
     # UIView扩展
     s.subspec 'LNViewExtension' do |tool|
         tool.source_files = 'LNTools_fyh/LNViewExtension/Classes/**/*'
+        tool.ios.deployment_target = '9.0'
         tool.dependency 'Toast'
     end
     
     # UIView扩展
     s.subspec 'LNProgressHUD' do |hud|
         hud.source_files = 'LNTools_fyh/LNProgressHUD/Classes/**/*'
+        hud.ios.deployment_target = '9.0'
         hud.dependency 'MBProgressHUD'
         hud.resource_bundles = {
             'LNTools_fyh' => ['LNTools_fyh/LNProgressHUD/Assets/Images.xcassets']
