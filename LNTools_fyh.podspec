@@ -42,12 +42,12 @@ Pod::Spec.new do |s|
     # s.dependency 'AFNetworking', '~> 2.3'
 
     
-    # 图片浏览器
-    s.subspec 'LNImageBrowser' do |browser|
-        browser.source_files = 'LNTools_fyh/LNImageBrowser/Classes/**/*'
-        browser.ios.deployment_target = '9.0'
-        browser.dependency 'YYWebImage'
-    end
+#    # 图片浏览器
+#    s.subspec 'LNImageBrowser' do |browser|
+#        browser.source_files = 'LNTools_fyh/LNImageBrowser/Classes/**/*'
+#        browser.ios.deployment_target = '9.0'
+#        browser.dependency 'YYWebImage'
+#    end
     
     # 刷新
     s.subspec 'LNRefresh' do |refresh|
