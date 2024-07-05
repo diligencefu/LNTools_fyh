@@ -5,6 +5,7 @@
 //  Created by MAC on 2020/10/11.
 //
 
+import UIKit
 @objc public extension UIColor {
     
     convenience init(red: CGFloat, green: CGFloat, blue: CGFloat, alph:CGFloat = 1) {

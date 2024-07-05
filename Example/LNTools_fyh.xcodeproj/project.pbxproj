@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02A5239B816F2440BA372484 /* Pods_LNTools_fyh_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC8011BF3F0C6EE401286AF /* Pods_LNTools_fyh_Example.framework */; };
+		4C8F3F0A2C37CD590057DF9F /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8F3F092C37CD590057DF9F /* Package.swift */; };
 		4CB878B1242F3CEA00A1E4E7 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB878B0242F3CEA00A1E4E7 /* Target.swift */; };
 		4CB878B3242F3E8000A1E4E7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB878B2242F3E8000A1E4E7 /* TestViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		2E854EF5ED4C813588581DF0 /* LNTools_fyh.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LNTools_fyh.podspec; path = ../LNTools_fyh.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		32C6D415CB3C95A1A9A99312 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		401A5150A7C0C6389F559492 /* Pods-LNTools_fyh_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNTools_fyh_Example.release.xcconfig"; path = "Target Support Files/Pods-LNTools_fyh_Example/Pods-LNTools_fyh_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4C8F3F092C37CD590057DF9F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		4CB878B0242F3CEA00A1E4E7 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		4CB878B2242F3E8000A1E4E7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		50E234B2C153A1393B30C847 /* Pods_LNTools_fyh_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNTools_fyh_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				4C8F3F092C37CD590057DF9F /* Package.swift */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for LNTools_fyh */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CB878B1242F3CEA00A1E4E7 /* Target.swift in Sources */,
+				4C8F3F0A2C37CD590057DF9F /* Package.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				4CB878B3242F3E8000A1E4E7 /* TestViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
